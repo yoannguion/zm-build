@@ -1,0 +1,26 @@
+name: build zimbra Packages
+on:
+  repository_dispatch:
+    types: [build_docker]
+  push:
+    branches: [ build/** ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout zm-build in zimbra subdirectory
+      uses: actions/checkout@master
+      with:
+        path: 'zimbra/zm-build'
+    - name: Build Zimbra on zimbra-builder
+      uses: addnab/docker-run-action@v3
+      with:
+        image: yoannguion/zimbra-devcore:github
+        options: -v ${{ github.workspace }}/zimbra:/home/build
+        run: zm-build/build.sh
+    - name: release archive zimbra
+      uses: ncipollo/release-action@v1
+      with:
+        tag: 9.0.0.p26
+        artifacts: "zimbra/BUILDS/RHEL8_64-KEPLER-900*/zcs*.tgz"
+        token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
