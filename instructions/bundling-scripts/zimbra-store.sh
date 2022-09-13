@@ -84,6 +84,9 @@ main()
     mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/zimbraldaputils
     mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/zm-oauth-social
     mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/zm-gql
+    mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext-common
+    mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/convertd
+
 
     if [ "${buildType}" == "NETWORK" ]
     then
@@ -95,7 +98,6 @@ main()
       mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/zimbrasync
       mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/network
       mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/com_zimbra_oo
-      mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/convertd
       mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/zimbrahsm
       mkdir -p ${repoDir}/zm-build/${currentPackage}/opt/zimbra/lib/ext/smime
 
