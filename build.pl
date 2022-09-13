@@ -846,15 +846,47 @@ sub Clone($$)
                child => sub {
 
                   my $s = 0;
-                  foreach my $minus_b_arg ( split( /,/, $repo_tag_csv ) )
-                  {
-                     print "\n";
-                     my $r = SysExec( "git", "checkout", $minus_b_arg );
-                     if ( $r->{success} )
-                     {
-                        $s++;
-                        last;
-                     }
+                  my $r = SysExec( "git", "fetch", "--all", "--tags" );
+                  if ( $r->{success} ) {
+                    print "fecth tag OK\n";
+                    foreach my $minus_b_arg ( split( /,/, $repo_tag_csv ) )
+                    {
+                        my $r = SysExec( { continue_on_error => 1 } , "git", "rev-parse", "$minus_b_arg" );
+                        if ( $r->{success} )
+                        {
+                            print "git rev-parse $minus_b_arg OK\n";
+                            my $r = SysExec( "git", "describe", "--tags", "--abbrev=0" );
+                            if ( $r->{success} ){
+                                print "git describe OK\n";
+                                if( !("@{$r->{out}}" =~ /$minus_b_arg$/) )
+                                {
+                                    my $r = SysExec( "git", "checkout", $minus_b_arg );
+                                    if ( $r->{success} )
+                                    {
+                                        print "git checkout $minus_b_arg OK\n";
+
+                                        $s++;
+                                        last;
+                                    }
+                                }
+                                else
+                                {
+                                    print "Already up to date\n";
+                                    $s++;
+                                    last;
+                                }
+                            }
+                            else{
+                                print "git describe NOK\n";
+                            }
+                        }
+                        else{
+                            print "git rev-parse NOK\n";
+                        }
+                    }
+                  }
+                  else{
+                    print "git fetch NOK\n";
                   }
 
                   Die("Clone Attempts Failed")
