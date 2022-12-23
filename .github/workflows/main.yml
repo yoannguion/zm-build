@@ -15,12 +15,12 @@ jobs:
     - name: Build Zimbra on zimbra-builder
       uses: addnab/docker-run-action@v3
       with:
-        image: yoannguion/zimbra-devcore:github
+        image: yoannguion/zimbra-devcore:github-el6
         options: -v ${{ github.workspace }}/zimbra:/home/build
         run: zm-build/build.sh
     - name: release archive zimbra
       uses: ncipollo/release-action@v1
       with:
-        tag: 9.0.0.p26
-        artifacts: "zimbra/BUILDS/RHEL8_64-KEPLER-900*/zcs*.tgz"
+        tag: 8.8.15.p35
+        artifacts: "zimbra/BUILDS/RHEL6_64-JOULE-8815*/zcs*.tgz"
         token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
