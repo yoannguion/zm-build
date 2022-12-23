@@ -21,6 +21,6 @@ jobs:
     - name: release archive zimbra
       uses: ncipollo/release-action@v1
       with:
-        tag: 9.0.0.p26
+        tag: 9.0.0.p28
         artifacts: "zimbra/BUILDS/RHEL8_64-KEPLER-900*/zcs*.tgz"
         token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
