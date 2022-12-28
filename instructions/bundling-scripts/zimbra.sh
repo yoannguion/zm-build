@@ -34,6 +34,7 @@ CreateRhelPackage()
 
   for currentScript in ${zimbra[@]}
   do
+    echo "Building RPM ${currentScript} ..."
     cd ${repoDir}/packages/zimbra/${currentScript}
     make all
   done
