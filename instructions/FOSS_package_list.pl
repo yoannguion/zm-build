@@ -1,5 +1,6 @@
 @ENTRIES = (
    "thirdparty",
+   "zimbra",
    "zimbra-core",
    "zimbra-ldap",
    "zimbra-logger",
