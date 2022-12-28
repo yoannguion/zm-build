@@ -21,6 +21,6 @@ jobs:
     - name: release archive zimbra
       uses: ncipollo/release-action@v1
       with:
-        tag: 8.8.15.p35
+        tag: 8.8.15.p36
         artifacts: "zimbra/BUILDS/RHEL6_64-JOULE-8815*/zcs*.tgz"
         token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
