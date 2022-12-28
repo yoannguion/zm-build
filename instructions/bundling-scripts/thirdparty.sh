@@ -30,7 +30,8 @@ CreateRhelPackage()
   echo "mkdir -p ${repoDir}/zm-build/${arch}"
   mkdir -p ${repoDir}/zm-build/${arch}
 
-  for currentScript in `ls ${repoDir}/packages/thirdparty/`
+  thirdparty=( aspell aspell-ca clamav cyrus-sasl jetty-distribution httpd memcached openjdk openssl perl-carp-clan perl-compress-raw-bzip2 perl-compress-raw-zlib perl-io-compress perl-list-moreutils perl-mail-spamassassin perl-net-server php )
+  for currentScript in ${thirdparty[@]}
   do
     cd ${repoDir}/packages/thirdparty/${currentScript}
     make all
