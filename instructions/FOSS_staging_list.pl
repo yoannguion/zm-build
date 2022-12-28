@@ -1,5 +1,19 @@
 @ENTRIES = (
    {
+      "dir"         => "packages",
+      "ant_targets" => undef,
+     "stage_cmd"   => sub {
+         SysExec("(cd .. && rsync -az --relative --exclude '.git' packages $CFG{BUILD_DIR}/)");
+      },
+   },
+   {
+      "dir"         => "zimbra-package-stub",
+      "ant_targets" => undef,
+      "stage_cmd"   => sub {
+            SysExec("(cd .. && rsync -az --relative --exclude '.git' zimbra-package-stub $CFG{BUILD_DIR}/)");
+      },
+   },
+   {
       "dir"             => "zm-mailbox",
       "ant_targets"     => ["pkg-after-plough-through-tests"],
       "deploy_pkg_into" => "bundle",

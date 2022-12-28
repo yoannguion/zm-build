@@ -1,4 +1,6 @@
 @ENTRIES = (
+   { name => "packages",                             },
+   { name => "zimbra-package-stub",  branch => "master"       },
    { name => "ant-1.7.0-ziputil-patched",            },
    { name => "ant-tar-patched",                      },
    { name => "ical4j-0.9.16-patched",                },
