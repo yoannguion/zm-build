@@ -1,5 +1,5 @@
 @ENTRIES = (
-   "jetty-distribution",
+   "thirdparty",
    "zimbra-core",
    "zimbra-ldap",
    "zimbra-logger",

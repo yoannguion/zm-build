@@ -5,12 +5,6 @@
 
 #-------------------- Configuration ---------------------------
 
-    currentScript=`basename $0 | cut -d "." -f 1`                          # jetty-distribution
-    currentPackage=`echo ${currentScript}-build`
-
-
-
-
 #-------------------- Build Package ---------------------------
 main()
 {
@@ -32,13 +26,17 @@ CreateDebianPackage()
 
 CreateRhelPackage()
 {
-    echo "mkdir -p ${repoDir}/zm-build/${arch}"
-    mkdir -p ${repoDir}/zm-build/${arch}
+
+  echo "mkdir -p ${repoDir}/zm-build/${arch}"
+  mkdir -p ${repoDir}/zm-build/${arch}
+
+  for currentScript in `ls ${repoDir}/packages/thirdparty/`
+  do
     cd ${repoDir}/packages/thirdparty/${currentScript}
     make all
-    find ${repoDir}/packages/thirdparty/${currentScript}/build/ -name "*.${arch}.rpm" -exec mv -v {} ${repoDir}/zm-build/${arch} \;
+  done
+  find ${repoDir}/packages/thirdparty/ -name "*.${arch}.rpm" -exec mv -v {} ${repoDir}/zm-build/${arch} \;
+
 }
-
-
 ############################################################################
 main "$@"
