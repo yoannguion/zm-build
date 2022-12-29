@@ -30,7 +30,7 @@ CreateRhelPackage()
   echo "mkdir -p ${repoDir}/zm-build/${arch}"
   mkdir -p ${repoDir}/zm-build/${arch}
 
-  zimbra=( base perl perl-base apache-base apache-components dnscache-components ldap-components mta-components os-requirements proxy-components spell-base spell-components  )
+  zimbra=( base perl perl-base apache-base memcached-base apache-components dnscache-components ldap-components mta-components os-requirements proxy-components spell-base spell-components  )
 
   for currentScript in ${zimbra[@]}
   do
