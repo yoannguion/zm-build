@@ -41,7 +41,7 @@ CreateRhelPackage()
   find ${repoDir}/packages/zimbra/ -name "*.${arch}.rpm" -exec mv -v {} ${repoDir}/zm-build/${arch} \;
   cd ${repoDir}/zm-build/${arch} && createrepo .
 
-cat >  /etc/yum.repos.d/zimbra-build.conf << \EOF
+sudo cat >  /etc/yum.repos.d/zimbra-build.conf << \EOF
 [zimbra-build]
   name=Zimbra Build Repository
   baseurl=file://${repoDir}/zm-build/${arch}
