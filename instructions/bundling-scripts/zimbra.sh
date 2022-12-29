@@ -48,7 +48,7 @@ sudo bash -c 'cat >  /etc/yum.repos.d/zimbra-build.conf << \EOF
   gpgcheck=0
   enabled=1
 EOF'
-
+cat /etc/yum.repos.d/zimbra-build.conf
 }
 ############################################################################
 main "$@"
