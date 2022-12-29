@@ -1,6 +1,6 @@
 @ENTRIES = (
    { name => "packages",         branch => "github_8.8.15.p36", remote => "gh-yg"                    },
-   { name => "zimbra-package-stub",                 branch => "master" },
+   { name => "zimbra-package-stub",  branch => "github", remote => "gh-yg"       },
    { name => "ant-1.7.0-ziputil-patched",            },
    { name => "ant-tar-patched",                      },
    { name => "ical4j-0.9.16-patched",                },
