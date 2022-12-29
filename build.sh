@@ -11,6 +11,8 @@ PATCHNO=36
 #########################################
 
 build_zimbra() {
+  echo "uname -r"
+  uname -r
   #ENV_CACHE_CLEAR_FLAG=true
   $(dirname $0)/build.pl --ant-options -DskipTests=true --build-dev-tool-base-dir=/.zm-dev-tools --build-release=JOULE --build-release-no=8.8.15 --build-release-candidate=ZZENO --build-type=FOSS --build-thirdparty-server=files.zimbra.com --git-default-tag=$LIST_DEFAULT_TAG --build-no=$PATCHNO`date +'%Y%m%d'`
 
