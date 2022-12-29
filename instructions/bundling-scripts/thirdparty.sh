@@ -30,7 +30,7 @@ CreateRhelPackage()
   echo "mkdir -p ${repoDir}/zm-build/${arch}"
   mkdir -p ${repoDir}/zm-build/${arch}
 
-  thirdparty=( aspell aspell-ca clamav cyrus-sasl jetty-distribution httpd memcached openjdk openssl perl-carp-clan perl-compress-raw-bzip2 perl-compress-raw-zlib perl-io-compress perl-list-moreutils perl-mail-spamassassin perl-net-server php )
+  thirdparty=( aspell aspell-ca clamav apr apr-util libevent openssl heimdal curl libxml2 cyrus-sasl jetty-distribution httpd memcached openjdk perl-carp-clan perl-compress-raw-bzip2 perl-compress-raw-zlib perl-io-compress perl-exporter-tiny perl-list-moreutils  perl-digest-sha1 perl-html-parser perl-mail-dkim perl-net-dns perl-netaddr-ip perl-mail-spf perl-encode-detect perl-net-cidr-lite perl-mail-spamassassin perl-net-server php )
   for currentScript in ${thirdparty[@]}
   do
     echo "Building RPM ${currentScript} ..."
