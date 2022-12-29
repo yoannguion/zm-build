@@ -38,7 +38,7 @@ CreateRhelPackage()
     make all
     find ${repoDir}/packages/thirdparty/${currentScript} -name "*.${arch}.rpm" -exec mv -v {} ${repoDir}/zm-build/${arch} \;
     cd ${repoDir}/zm-build/${arch} && createrepo  --update .
-    yum clean all --disablerepo=C6.10-base,C6.10-extras,C6.10-updates,epel
+    sudo yum clean all --disablerepo=C6.10-base,C6.10-extras,C6.10-updates,epel
   done
 
 
