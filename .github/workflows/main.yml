@@ -15,7 +15,7 @@ jobs:
     - name: Build Zimbra on zimbra-builder
       uses: addnab/docker-run-action@v3
       with:
-        image: yoannguion/zimbra-devcore:github-el6
+        image: yoannguion/zimbra-devcore:github-el6-light
         options: -v ${{ github.workspace }}/zimbra:/home/build
         run: zm-build/build.sh
     - name: release archive zimbra
