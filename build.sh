@@ -3,8 +3,8 @@
 #############
 # Variables #
 #############
-LIST_DEFAULT_TAG=10.0.4,10.0.3,10.0.2,10.0.1,10.0.0
-PATCHNO=33
+LIST_DEFAULT_TAG=10.0.5,10.0.4,10.0.3,10.0.2,10.0.1,10.0.0
+PATCHNO=5
 
 #########################################
 # DON"T EDIT ANYTHING BELOW THESE LINES #
