@@ -4,7 +4,7 @@
    { name => "ical4j-0.9.16-patched",                },
    { name => "junixsocket",                         tag    => "junixsocket-parent-2.0.4", remote => "gh-ks",},
    { name => "nekohtml-1.9.13",                      },
-   { name => "java-html-sanitizer-release-20190610.1",},
+   { name => "java-html-sanitizer-release-20190610.1", tag => "9.0.0.p27"},
    { name => "antisamy",                             },
    { name => "zm-admin-console",                     },
    { name => "zm-admin-help-common",                 },
