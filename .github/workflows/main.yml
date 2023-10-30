@@ -22,5 +22,5 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         tag: 10.0.5
-        artifacts: "zimbra/BUILDS/RHEL8_64-NIKOLATESLA-1000*/zcs*.tgz"
+        artifacts: "zimbra/BUILDS/RHEL8_64-NIKOLATESLA-1005*/zcs*.tgz"
         token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
