@@ -21,6 +21,6 @@ jobs:
     - name: release archive zimbra
       uses: ncipollo/release-action@v1
       with:
-        tag: 10.0.6
-        artifacts: "zimbra/BUILDS/RHEL8_64-NIKOLATESLA-1006*/zcs*.tgz"
+        tag: 10.0.7
+        artifacts: "zimbra/BUILDS/RHEL8_64-NIKOLATESLA-1007*/zcs*.tgz"
         token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
